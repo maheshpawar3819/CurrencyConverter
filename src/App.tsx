@@ -1,13 +1,10 @@
 import React, {useState} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   TextInput,
-  useColorScheme,
   View,
   FlatList,
   Pressable,
@@ -59,7 +56,7 @@ function App(): React.JSX.Element {
               value={inputValue}
               clearButtonMode="always" //only for ios
               onChangeText={setInputValue}
-              keyboardType="number-pad"
+              keyboardType="numeric"
               placeholder="Enter amount in rupees"
             />
           </View>
@@ -68,7 +65,7 @@ function App(): React.JSX.Element {
         </View>
         <View style={styles.bottomContainer}>
           <FlatList
-            numColumns={3}
+            numColumns={2}
             data={currencyByRupee}
             keyExtractor={item => item.name}
             renderItem={({item}) => (
